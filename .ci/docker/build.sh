@@ -244,6 +244,7 @@ case "$image" in
     ANACONDA_PYTHON_VERSION=3.9
     CLANG_VERSION=10
     PROTOBUF=yes
+    TRITON=yes
     DB=yes
     VISION=yes
     ;;
@@ -251,6 +252,7 @@ case "$image" in
     ANACONDA_PYTHON_VERSION=3.11
     CLANG_VERSION=10
     PROTOBUF=yes
+    TRITON=yes
     DB=yes
     VISION=yes
     ;;
@@ -259,6 +261,7 @@ case "$image" in
     GCC_VERSION=9
     PROTOBUF=yes
     DB=yes
+    TRITON=yes
     VISION=yes
     ;;
   pytorch-linux-focal-rocm-n-1-py3)
@@ -364,6 +367,7 @@ case "$image" in
     VISION=yes
     KATEX=yes
     DOCS=yes
+    TRITON=yes
     UNINSTALL_DILL=yes
     ;;
   pytorch-linux-jammy-py3-clang12-executorch)
