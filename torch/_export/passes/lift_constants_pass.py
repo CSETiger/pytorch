@@ -232,7 +232,12 @@ def lift_constants_pass(
                         constant_name = f"lifted_tensor_{num_tensor_constants}"
                         constant_fqn = get_constant_fqn(node, constant_name)
                     num_tensor_constants += 1
-
+            elif isinstance(constant_val, torch.fx.GraphModule):
+                continue
+            elif "LoweredBackendModule" in type(constant_val).__name__:
+                continue
+            elif "AOTInductorRunnerWrapper" in type(constant_val).__name__:
+                continue
             else:
                 raise SpecViolationError(
                     f"getattr node {node} referencing unsupported type {type(constant_val)}"
